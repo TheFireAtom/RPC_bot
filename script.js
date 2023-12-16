@@ -1,11 +1,17 @@
 // Greeting message
-const greetings = alert("Hello! In this simple rock paper scissors game you will play against bot. To start the game, press \"OK\" button and choose your handsign. \
-You can always restart the game by pressing f5. Good luck!!!");
+alert("Hello! In this simple rock paper scissors game you will play against bot. If you won, the background of handsign that you clicked will turn green. \
+If you lose, color will be red. Unused handsigns will turn red too. Bot choise is displays as purple color. If it's draw, white color will appear.  \
+To start the game, press \"OK\" button and choose your handsign. \
+You can always restart the game by pressing f5 if something is wrong. Good luck!!!");
 
 // DOM objects 
 const rock = document.getElementById("rock");
 const paper = document.getElementById("paper");
 const scissors = document.getElementById("scissors");
+const conclusion = document.getElementById("choise");
+const canvas = document.getElementById("confetti");
+const jsConfetti = new JSConfetti();
+// const choise = document.getElementById(choise);
 
 // Game variables
 let botAnswer;
@@ -78,28 +84,110 @@ function compare(playerAnswer, botAnswer) {
     if (check) {
         console.log(playerAnswer);
         if (playerAnswer == "rock" && botAnswer == "paper") {
-            return alert("bot win this time!!!");
+            rock.className = "";
+            paper.className = "";
+            scissors.className = "";
+            rock.classList.toggle("red-background");
+            paper.classList.toggle("indigo-background");
+            scissors.classList.toggle("red-background");
+            jsConfetti.addConfetti({
+                emojis: ['😈', '🥈', '💔', '👽', '😵', '😓'],
+                confettiNumber: 10, 
+                emojiSize: 100,
+            });
+            conclusion.innerText = "Bot win this time!!!";
         }
         else if (playerAnswer == "rock" && botAnswer == "scissors") {
-            return alert("player win this time!!!");
+            rock.className = "";
+            paper.className = "";
+            scissors.className = "";
+            rock.classList.toggle("green-background");
+            paper.classList.toggle("red-background");
+            scissors.classList.toggle("indigo-background");
+            jsConfetti.addConfetti({
+                emojis: ['🔥', '⚡️', '🎯', '🤟', '😁', '😜'],
+                confettiNumber: 13, 
+                emojiSize: 100,
+            }).then(() => jsConfetti.addConfetti());
+            conclusion.innerText = "Player win this time!!!";
         }
         else if (playerAnswer == "paper" && botAnswer == "rock") {
-            return alert("player win this time!!!");
+            rock.className = "";
+            paper.className = "";
+            scissors.className = "";
+            rock.classList.toggle("indigo-background");
+            paper.classList.toggle("green-background");
+            scissors.classList.toggle("red-background");
+            jsConfetti.addConfetti({
+                emojis: ['🔥', '⚡️', '🎯', '🤟', '😁', '😜'],
+                confettiNumber: 13, 
+                emojiSize: 100,
+            }).then(() => jsConfetti.addConfetti());
+            conclusion.innerText = "Player win this time!!!";
         }
         else if (playerAnswer == "paper" && botAnswer == "scissors") {
-            return alert("bot win this time!!!");
+            rock.className = "";
+            paper.className = "";
+            scissors.className = "";
+            rock.classList.toggle("red-background");
+            paper.classList.toggle("red-background");
+            scissors.classList.toggle("indigo-background");
+            jsConfetti.addConfetti({
+                emojis: ['😈', '🥈', '💔', '👽', '😵', '😓'],
+                confettiNumber: 13, 
+                emojiSize: 100,
+            });
+            conclusion.innerText = "Bot win this time!!!";
         }
         else if (playerAnswer == "scissors" && botAnswer == "rock") {
-            return alert("bot win this time!!!");
+            rock.className = "";
+            paper.className = "";
+            scissors.className = "";
+            rock.classList.toggle("indigo-background");
+            paper.classList.toggle("red-background");
+            scissors.classList.toggle("red-background");
+            jsConfetti.addConfetti({
+                emojis: ['😈', '🥈', '💔', '👽', '😵', '😓'],
+                confettiNumber: 13, 
+                emojiSize: 100,
+            });
+            conclusion.innerText = "Bot win this time!!!";
         }
         else if (playerAnswer == "scissors" && botAnswer == "paper") {
-            return alert("player win this time!!!");
+            rock.className = "";
+            paper.className = "";
+            scissors.className = "";
+            rock.classList.toggle("red-background");
+            paper.classList.toggle("indigo-background");
+            scissors.classList.toggle("green-background");
+            jsConfetti.addConfetti({
+                emojis: ['🔥', '⚡️', '🎯', '🤟', '😁', '😜'],
+                confettiNumber: 13, 
+                emojiSize: 100,
+            }).then(() => jsConfetti.addConfetti());
+            conclusion.innerText = "Player win this time!!!";
         }
         else {
-            return alert("player win this time!!!");
+            rock.className = "";
+            paper.className = "";
+            scissors.className = "";
+            rock.classList.toggle("white-background");
+            paper.classList.toggle("white-background");
+            scissors.classList.toggle("white-background");
+            jsConfetti.addConfetti({
+                emojis: ['👏', '🤝', '😐', '👀', '🐸', '🏳️'],
+                confettiNumber: 13, 
+                emojiSize: 100,
+            });
+            conclusion.innerText = "Oh!!! Looks like a draw right here!!!";
         }
     }
 }
+
+// Confetti logic
+
+
+
 
 // function calling
 

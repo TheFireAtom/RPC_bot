@@ -4,6 +4,7 @@
     box-sizing: border-box;
     font-family: 'Kalnia', serif;
     font-family: 'Manrope', sans-serif;
+    overflow: hidden;
 }
 
 body {
@@ -49,6 +50,34 @@ span:hover {
 span:not(:hover) {
     font-size: 300px;
     transition: all 0.5s ease;
+}
+
+.red-background {
+    background: crimson;
+    filter: saturate(100%);
+    border: 10px black solid;
+    border-radius: 20px;
+}
+
+.green-background {
+    background: lime;
+    filter: saturate(100%);
+    border: 10px black solid;
+    border-radius: 20px;
+}
+
+.white-background {
+    background: white;
+    filter: saturate(100%);
+    border: 10px black solid;
+    border-radius: 20px;
+}
+
+.indigo-background {
+    background: indigo;
+    filter: saturate(100%);
+    border: 10px black solid;
+    border-radius: 20px;
 }
 
 
