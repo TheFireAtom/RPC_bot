@@ -80,5 +80,12 @@ span:not(:hover) {
     border-radius: 20px;
 }
 
+.blue-background {
+    background: #213a9c;
+    filter: saturate(100%);
+    border: 10px black solid;
+    border-radius: 20px;
+}
+
 
 

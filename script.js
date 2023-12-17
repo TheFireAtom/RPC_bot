@@ -1,6 +1,6 @@
 // Greeting message
 alert("Hello! In this simple rock paper scissors game you will play against bot. If you won, the background of handsign that you clicked will turn green. \
-If you lose, color will be red. Unused handsigns will turn red too. Bot choise is displays as purple color. If it's draw, white color will appear.  \
+If you lose, color will be red. Unused handsigns will turn white. Bot choise is displays as purple color. If it's draw, blue color will appear on choosed handsign and two other will become white.  \
 To start the game, press \"OK\" button and choose your handsign. \
 You can always restart the game by pressing f5 if something is wrong. Good luck!!!");
 
@@ -89,7 +89,7 @@ function compare(playerAnswer, botAnswer) {
             scissors.className = "";
             rock.classList.toggle("red-background");
             paper.classList.toggle("indigo-background");
-            scissors.classList.toggle("red-background");
+            scissors.classList.toggle("white-background");
             jsConfetti.addConfetti({
                 emojis: ['😈', '🥈', '💔', '👽', '😵', '😓'],
                 confettiNumber: 10, 
@@ -102,7 +102,7 @@ function compare(playerAnswer, botAnswer) {
             paper.className = "";
             scissors.className = "";
             rock.classList.toggle("green-background");
-            paper.classList.toggle("red-background");
+            paper.classList.toggle("white-background");
             scissors.classList.toggle("indigo-background");
             jsConfetti.addConfetti({
                 emojis: ['🔥', '⚡️', '🎯', '🤟', '😁', '😜'],
@@ -117,7 +117,7 @@ function compare(playerAnswer, botAnswer) {
             scissors.className = "";
             rock.classList.toggle("indigo-background");
             paper.classList.toggle("green-background");
-            scissors.classList.toggle("red-background");
+            scissors.classList.toggle("white-background");
             jsConfetti.addConfetti({
                 emojis: ['🔥', '⚡️', '🎯', '🤟', '😁', '😜'],
                 confettiNumber: 13, 
@@ -129,7 +129,7 @@ function compare(playerAnswer, botAnswer) {
             rock.className = "";
             paper.className = "";
             scissors.className = "";
-            rock.classList.toggle("red-background");
+            rock.classList.toggle("white-background");
             paper.classList.toggle("red-background");
             scissors.classList.toggle("indigo-background");
             jsConfetti.addConfetti({
@@ -144,7 +144,7 @@ function compare(playerAnswer, botAnswer) {
             paper.className = "";
             scissors.className = "";
             rock.classList.toggle("indigo-background");
-            paper.classList.toggle("red-background");
+            paper.classList.toggle("white-background");
             scissors.classList.toggle("red-background");
             jsConfetti.addConfetti({
                 emojis: ['😈', '🥈', '💔', '👽', '😵', '😓'],
@@ -157,7 +157,7 @@ function compare(playerAnswer, botAnswer) {
             rock.className = "";
             paper.className = "";
             scissors.className = "";
-            rock.classList.toggle("red-background");
+            rock.classList.toggle("white-background");
             paper.classList.toggle("indigo-background");
             scissors.classList.toggle("green-background");
             jsConfetti.addConfetti({
@@ -167,13 +167,44 @@ function compare(playerAnswer, botAnswer) {
             }).then(() => jsConfetti.addConfetti());
             conclusion.innerText = "Player win this time!!!";
         }
-        else {
+
+        else if (playerAnswer == "rock" && botAnswer == "rock") {
+            rock.className = "";
+            paper.className = "";
+            scissors.className = "";
+            rock.classList.toggle("blue-background");
+            paper.classList.toggle("white-background");
+            scissors.classList.toggle("white-background");
+            jsConfetti.addConfetti({
+                emojis: ['👏', '🤝', '😐', '👀', '🐸', '🏳️'],
+                confettiNumber: 13, 
+                emojiSize: 100,
+            });
+            conclusion.innerText = "Oh!!! Looks like a draw right here!!!";
+        }
+
+        else if (playerAnswer == "paper" && botAnswer == "paper") {
+            rock.className = "";
+            paper.className = "";
+            scissors.className = "";
+            rock.classList.toggle("white-background");
+            paper.classList.toggle("blue-background");
+            scissors.classList.toggle("white-background");
+            jsConfetti.addConfetti({
+                emojis: ['👏', '🤝', '😐', '👀', '🐸', '🏳️'],
+                confettiNumber: 13, 
+                emojiSize: 100,
+            });
+            conclusion.innerText = "Oh!!! Looks like a draw right here!!!";
+        }
+
+        else if (playerAnswer == "scissors" && botAnswer == "scissors") {
             rock.className = "";
             paper.className = "";
             scissors.className = "";
             rock.classList.toggle("white-background");
             paper.classList.toggle("white-background");
-            scissors.classList.toggle("white-background");
+            scissors.classList.toggle("blue-background");
             jsConfetti.addConfetti({
                 emojis: ['👏', '🤝', '😐', '👀', '🐸', '🏳️'],
                 confettiNumber: 13, 
