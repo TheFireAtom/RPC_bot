@@ -1,13 +1,8 @@
 {
   "name": "backend",
-  "version": "1.0.0",
-  "description": "Just a simple hosting file",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+      "express": "~3.4.4"
+  }
 }
