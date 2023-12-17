@@ -2,17 +2,24 @@ const http = require('http');
 const port = 12059;
 
 var express = require('express'); // Get the module
-var app = express(); // Create express by calling the prototype in var express
+var app = express()
+  , server = require('http').createServer(app)
+  , io = io.listen(server);
+
+app.get('/', function(req, res) {
+    res.sendfile('C:/Users/Ivane/OneDrive/IMPORTANT_FILES/programming_stuff/RPC_bot/frontend/main.html');
+});
+server.listen(80);
 
 // Create a new server object
-const server = http.createServer(function (req, res) {
+// const server = http.createServer(function (req, res) {
 
-    // Write a responce to the client
-    res.sendfile('C:/Users/Ivane/OneDrive/IMPORTANT_FILES/programming_stuff/RPC_bot/frontend/main.html');
+//     // Write a responce to the client
+//     res.sendfile('C:/Users/Ivane/OneDrive/IMPORTANT_FILES/programming_stuff/RPC_bot/frontend/main.html');
 
-    // End the responce 
-    res.end();
-});
+//     // End the responce 
+//     res.end();
+// });
 
 
 // Set up our server so it will listen on the port 
