@@ -5,11 +5,12 @@ const port = 12059;
 const server = http.createServer(function (req, res) {
 
     // Write a responce to the client
-    res.write('Hello World');
+    res.sendfile('C:/Users/Ivane/OneDrive/IMPORTANT_FILES/programming_stuff/RPC_bot/frontend/main.html');
 
     // End the responce 
     res.end();
 });
+
 
 // Set up our server so it will listen on the port 
 server.listen(port, function(error) {
