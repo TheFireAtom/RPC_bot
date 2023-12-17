@@ -9,7 +9,18 @@ var io = io.listen(server);
 app.get('/', function(req, res) {
     res.sendfile('home/container/main.html');
 });
-server.listen(80);
+server.listen(port, function(error) {
+
+    // Checking any error occur while listening on port
+    if (error) {
+        console.log('Something went wrong', error);
+    }
+    // Else sent message of listening 
+    else {
+        console.log(('Server is listening on port + port'));
+    }
+})
+// server.listen(80);
 
 // Create a new server object
 // const server = http.createServer(function (req, res) {
@@ -22,15 +33,15 @@ server.listen(80);
 // });
 
 
-// Set up our server so it will listen on the port 
-server.listen(port, function(error) {
+// // Set up our server so it will listen on the port 
+// server.listen(port, function(error) {
 
-    // Checking any error occur while listening on port
-    if (error) {
-        console.log('Something went wrong', error);
-    }
-    // Else sent message of listening 
-    else {
-        console.log(('Server is listening on port + port'));
-    }
-})
+//     // Checking any error occur while listening on port
+//     if (error) {
+//         console.log('Something went wrong', error);
+//     }
+//     // Else sent message of listening 
+//     else {
+//         console.log(('Server is listening on port + port'));
+//     }
+// })
