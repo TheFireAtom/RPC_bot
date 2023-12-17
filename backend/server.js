@@ -7,7 +7,7 @@ var app = express()
   , io = io.listen(server);
 
 app.get('/', function(req, res) {
-    res.sendfile('C:/Users/Ivane/OneDrive/IMPORTANT_FILES/programming_stuff/RPC_bot/frontend/main.html');
+    res.sendfile('home/container/main.html');
 });
 server.listen(80);
 
