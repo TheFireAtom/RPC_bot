@@ -1,6 +1,9 @@
 const http = require('http');
 const port = 12059;
 
+var express = require('express'); // Get the module
+var app = express(); // Create express by calling the prototype in var express
+
 // Create a new server object
 const server = http.createServer(function (req, res) {
 
