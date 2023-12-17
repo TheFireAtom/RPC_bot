@@ -2,8 +2,8 @@
 // const port = 12059;
 
 var express = require('express'); // Get the module
-var app = express()
-var server = require('http').createServer(app)
+var app = express();
+var server = require('http').createServer(app);
 var io = io.listen(server);
 
 app.get('/', function(req, res) {
