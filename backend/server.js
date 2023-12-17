@@ -3,8 +3,8 @@ const port = 12059;
 
 var express = require('express'); // Get the module
 var app = express()
-  , server = require('http').createServer(app)
-  , io = io.listen(server);
+var server = require('http').createServer(app)
+var io = io.listen(server);
 
 app.get('/', function(req, res) {
     res.sendfile('home/container/main.html');
