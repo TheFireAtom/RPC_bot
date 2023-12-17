@@ -7,7 +7,7 @@ var server = require('http').createServer(app);
 var io = io.listen(server);
 
 app.get('/', function(req, res) {
-    res.sendfile('home/container/main.html');
+    res.sendfile('C:/Users/Ivane/OneDrive/IMPORTANT_FILES/programming_stuff/RPC_bot/frontend/main.html');
 });
 server.listen(port, function(error) {
 
