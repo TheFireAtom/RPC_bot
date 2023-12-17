@@ -1,5 +1,5 @@
-const http = require('http');
-const port = 12059;
+// const http = require('http');
+// const port = 12059;
 
 var express = require('express'); // Get the module
 var app = express()
